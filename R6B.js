@@ -18,6 +18,15 @@ numbers in the tree.
 */
 function tree_sum(tree) {
 // your answer here
+    if(is_null(tree)){
+        return 0;
+    }
+    else if(is_list(head(tree))){
+        return tree_sum(head(tree)) + tree_sum(tail(tree));
+    }
+    else{
+        return head(tree) + tree_sum(tail(tree));
+    }
 }
 const my_tree = list(1, list(2, list(3, 4), 5), list(6, 7));
 tree_sum(my_tree);
@@ -52,4 +61,7 @@ shape of the tree or the order in which the elements appear?
 */
 function accumulate_tree(tree) {
 // your answer here
+    if(is_null(tree)) {
+        return 
+    }
 }
