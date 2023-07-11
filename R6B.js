@@ -59,9 +59,7 @@ return accumulate_tree( x => list(x), append, null, tree);
 Give sufficient conditions for f2 and initial such that the result does not depend on the
 shape of the tree or the order in which the elements appear?
 */
-function accumulate_tree(tree) {
+function accumulate_tree(f1, f2, initial , tree) {
 // your answer here
-    if(is_null(tree)) {
-        return 
-    }
+    return is_null(tree) ? initial : f2(is_list(head(tree)) ? accumulate_tree(f1, f2, initial, head(tree)) : f1(head(tree)) , accumulate_tree(f1, f2, initial, tail(tree)));
 }
